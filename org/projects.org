@@ -1,0 +1,4 @@
+# -*- mode: org -*-
+#+TITLE: PROJECTS
+#+STARTUP: show2levels
+#+TODO: IN-PROGRESS(i!) NEEDS-DISCUSSION(n@) TODO(t) WAITING(w@) | CANCELLED(c@) DONE(d)

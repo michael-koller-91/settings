@@ -1,0 +1,7 @@
+# -*- mode: org -*-
+#+TITLE: MEETINGS
+#+STARTUP: showall
+
+Meeting protocols are captured here and need to be refiled at some point.
+
+
