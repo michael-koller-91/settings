@@ -5,8 +5,8 @@
 # clone the Emacs repo
 # cd into the repo
 ./autogen.sh
-./configure --with=pgtk
-make -j16
+./configure --with-pgtk
+make
 make check
 sudo make install
 ```
@@ -30,3 +30,4 @@ sudo make uninstall
 make clean
 make distclean
 ```
+
