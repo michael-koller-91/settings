@@ -1,0 +1,5 @@
+# -*- mode: org -*-
+#+TITLE SNIPPETS
+#+STARTUP: showall
+
+A collection of code snippets.
