@@ -578,6 +578,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (setq lendar-week-start-day 1)
+
   ;; org
   (setq org-agenda-files (list "~/org"))
 
@@ -585,11 +587,10 @@ before packages are loaded."
         '(
           ("d" "Daysbook" entry (file+datetree "~/org/daysbook.org") "* %?")
           ("n" "Note" entry (file+datetree "~/org/notes.org") "* TODO%?")
-          ("m" "Meeting Protocol" entry (file "~/org/meetings.org") (file "~/.org_capture_templates/meeting.template"))
+          ("m" "Meeting Protocol" entry (file "~/org/meetings.org") "* TODO\n:PROPERTIES:\n:CAPTURED: %U\n:ATTENDEES: %^{ATTENDEES}\n:PROJECT: %^{PROJECT}\n:TOPIC: %^{TOPIC}\n:END:\n** %?")
+          ("s" "Code Snippet" entry (file "~/org/snippets.org") "* REFILE\n:PROPERTIES:\n:KEYWORDS: %^{KEYWORDS}\n:END:\n#+begin_src %^{language}\n%?\n#+end_src")
           )
         )
-
-  (setq calendar-week-start-day 1)
 
   (setq org-refile-allow-creating-parent-nodes 'confirm)
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 2))))
