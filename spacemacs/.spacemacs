@@ -580,6 +580,17 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq lendar-week-start-day 1)
 
+  ;; if Emacs runs in WSL, use the Windows browser to open links
+  (when (and (eq system-type 'gnu/linux)
+             (string-match
+              "Linux.*Microsoft.*Linux"
+              (shell-command-to-string "uname -a")))
+    (setq
+     browse-url-generic-program  "/mnt/c/Windows/System32/cmd.exe"
+     browse-url-generic-args     '("/c" "start")
+     browse-url-browser-function #'browse-url-generic)
+  )
+
   ;; org
   (setq org-agenda-files (list "~/org"))
 
@@ -588,7 +599,7 @@ before packages are loaded."
           ("d" "Daysbook" entry (file+datetree "~/org/daysbook.org") "* %?")
           ("n" "Note" entry (file+datetree "~/org/notes.org") "* TODO%?")
           ("m" "Meeting Protocol" entry (file "~/org/meetings.org") "* TODO\n:PROPERTIES:\n:CAPTURED: %U\n:ATTENDEES: %^{ATTENDEES}\n:PROJECT: %^{PROJECT}\n:TOPIC: %^{TOPIC}\n:END:\n** %?")
-          ("s" "Code Snippet" entry (file "~/org/snippets.org") "* REFILE\n:PROPERTIES:\n:KEYWORDS: %^{KEYWORDS}\n:END:\n#+begin_src %^{language}\n%?\n#+end_src")
+          ("s" "Code Snippet" entry (file "~/org/snippets.org") "* TODO %^{headline} %^g\n#+begin_src %^{language}\n%?\n#+end_src")
           )
         )
 
