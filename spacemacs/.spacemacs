@@ -607,6 +607,8 @@ before packages are loaded."
   (setq org-refile-targets '((org-agenda-files . (:maxlevel . 2))))
 
   (setq org-log-into-drawer "LOGBOOK")
+
+  (setq org-babel-python-command "python3")
 )
 
 
