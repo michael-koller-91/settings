@@ -555,12 +555,13 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; Set locale to UTF8
-  (set-language-environment 'utf-8)
-  (set-terminal-coding-system 'utf-8)
-  (setq locale-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-selection-coding-system 'utf-8)
-  (prefer-coding-system 'utf-8)
+  (set-language-environment 'utf-16)
+  (set-terminal-coding-system 'utf-16)
+  (setq locale-coding-system 'utf-16)
+  (set-default-coding-systems 'utf-16)
+  (set-selection-coding-system 'utf-16)
+  (set-clipboard-coding-system 'utf-16)
+  (prefer-coding-system 'utf-16)
 )
 
 
@@ -591,7 +592,7 @@ before packages are loaded."
      browse-url-browser-function #'browse-url-generic)
   )
 
-  ;; org
+  ;; org settings
   (setq org-agenda-files (list "~/org"))
 
   (setq org-capture-templates
